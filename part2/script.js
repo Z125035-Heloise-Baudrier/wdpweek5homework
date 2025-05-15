@@ -52,10 +52,10 @@ function checkAnswer(selectedIndex) {
 }
 
 function clearOptions() {
-  if(optionsContainer.hasChildNodes){
-    optionsContainer.removeChild(optionsContainer.firstElementChild); // Vide les options
-  }
-  nextBtn.disabled = true; 
+  function clearOptions() {
+  optionsContainer.innerHTML = ""; // Vide les options
+  nextBtn.disabled = true;         // Désactive le bouton Next
+ 
   
 }
 
