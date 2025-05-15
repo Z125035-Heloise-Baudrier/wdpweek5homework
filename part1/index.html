@@ -53,6 +53,28 @@
     Web Design and Programming — Shibaura Institute of Technology — Spring 2025
   </footer>
 
+  <script>
+    const quoteText = document.getElementById("quote");
+    const authorText = document.getElementById("author");
+    const newQuoteBtn = document.getElementById("newQuoteBtn");
+    function getQuote() {
+      quoteText.innerHTML="Page is loading the quote..."
+      fetch("quotes.json")
+      .then(response => response.json())
+      .then(data => {
+        let i = Math.floor(Math.random() * data.length);
+        quoteText.textContent = `"${data[i].q}"`;
+        authorText.textContent = `"by ${data[i].a}"`;
+      })
+      .catch(error => {
+          quoteText.textContent = "Sorry, couldn't load quote.";
+          console.error("Fetch error:", error);
+      });
+    }
+    newQuoteBtn.addEventListener("click", getQuote);
+    getQuote(); // Load a quote on page load
+  </script>
+
 </body>
 
 </html>
