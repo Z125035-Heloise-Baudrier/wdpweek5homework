@@ -52,11 +52,8 @@ function checkAnswer(selectedIndex) {
 }
 
 function clearOptions() {
-  function clearOptions() {
   optionsContainer.innerHTML = ""; // Vide les options
   nextBtn.disabled = true;         // Désactive le bouton Next
- 
-  
 }
 
 nextBtn.addEventListener("click", () => {
